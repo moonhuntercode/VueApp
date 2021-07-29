@@ -9,6 +9,20 @@
 <body>
     <div id="App0">
         <h1> {{message}} </h1>
+        <ol>
+
+        
+        <li v-for="verdura of verduras">
+             {{verdura}} 
+             <span v-if=" verdura.cantidad === 0" >- Sin Stock</span>
+            </li>
+        </ol>
+        <span v-if="seen">Now you see me.</span>
+        <span v-bind:title="message" >
+            Hover your mouse over me for <br>
+            a few seconds to see my dynamically
+            bound tittle!
+        </span>
     </div>
     
     <script src="./vue.js"></script>
