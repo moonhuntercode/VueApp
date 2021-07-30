@@ -14,7 +14,7 @@
 
         
         <li v-for="verdura of verduras">
-             {{verdura.nombre}} 
+             {{verdura}} 
              <span v-if=" verdura.cantidad === 0" >- Sin Stock</span>
             </li>
         </ol>
@@ -27,7 +27,7 @@
         <p> {{message2}} </p>
         <button v-on:click="reverseMessage" >Reverse Message</button>
         <br><br>
-        <input  v-model="nuevaFruta" v-on:keyup.enter="submit">
+        <input  v-model="nuevaFruta" v-on:keypress.Enter="submit">
         <button @click='agregarVerdura'>enviar</button>
     </div>
     

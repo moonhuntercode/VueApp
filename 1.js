@@ -23,7 +23,7 @@ methods:{
     },
     agregarVerdura(){
         this.verduras.push({
-            nombre:this.nuevaFruta,cantidad:2
+            nombre:this.nuevaFruta,cantidad:3,
         })
         this.nuevaFruta='';
     }
