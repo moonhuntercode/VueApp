@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./triangulo.css">
     <title>Vue1</title>
 </head>
 <body>
     <div id="App0">
-        <h1> {{message}} </h1>
+        <h1> message:{{message}} </h1>
         <ol>
 
         
         <li v-for="verdura of verduras">
-             {{verdura}} 
+             {{verdura.nombre}} 
              <span v-if=" verdura.cantidad === 0" >- Sin Stock</span>
             </li>
         </ol>
@@ -23,9 +24,25 @@
             a few seconds to see my dynamically
             bound tittle!
         </span>
+        <p> {{message2}} </p>
+        <button v-on:click="reverseMessage" >Reverse Message</button>
+        <br><br>
+        <input  v-model="nuevaFruta" v-on:keyup.enter="submit">
+        <button @click='agregarVerdura'>enviar</button>
+    </div>
+    <div class="portada1">
+        <h1>triangulo1</h1>
+    </div>
+    <div class="portada2">
+        <h1>triangulo2</h1>
+        
+    </div>
+    <div class="img1">
+        <img src="./daling0-recorte-vector-copia.svg" alt="darling">
     </div>
     
-    <script src="./vue.js"></script>
+    
+    <script src="./vue.global.js"></script>
     <script src="./1.js"></script>
 </body>
 </html>

@@ -1,16 +1,32 @@
-const app=new Vue({
-    el:'#App0',
-    data:{
-        message:'Hello Vue World',
-        verduras:[
-            {nombre:'Manzana',cantidad:4},
-            {nombre:'Banana',cantidad:3},
-            {nombre:'Zandia',cantidad:0},
-            {nombre:'repollo',cantidad:0},
-        ],
-        seen:true,
+const App0={
+    data(){
+        return{
+            message:'Hello Vue World',
+            message2:'putoskys',
+            verduras:[
+                {nombre:'Manzana',cantidad:4},
+                {nombre:'Banana',cantidad:3},
+                {nombre:'Zandia',cantidad:0},
+                {nombre:'repollo',cantidad:0},
+            ],
+            seen:true,
+            nuevaFruta:'',
         
+
     }
-})
-const arra= [1,2,3,4];
-console.log(arra);
+    
+},
+methods:{
+    reverseMessage:function(){
+        this.message2=this.message2.split('').reverse().join('')
+
+    },
+    agregarVerdura(){
+        this.verduras.push({
+            nombre:this.nuevaFruta,cantidad:2
+        })
+        this.nuevaFruta='';
+    }
+}
+}
+Vue.createApp(App0).mount('#App0')
