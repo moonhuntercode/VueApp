@@ -11,7 +11,7 @@ const App0={
             ],
             seen:true,
             nuevaFruta:'',
-        
+            total:0
 
     }
     
@@ -26,6 +26,15 @@ methods:{
             nombre:this.nuevaFruta,cantidad:3,
         })
         this.nuevaFruta='';
+    }
+},
+computed:{
+    sumarVerduras(){
+        this.total=0;
+        for(verdura of this.verduras){
+            this.total=this.total+verdura.cantidad;
+        }
+        return this.total;
     }
 }
 }
