@@ -1,10 +1,9 @@
+
 var app = new Vue({
     el: '#App0',
     data: {
-      message: 'Hello Vue!',
+      
       titulo:'TAREAS PENDIENTES',
-            
-            
             fondo:'bg-success',
             tareas:[],
             nuevaTarea:'',
@@ -43,5 +42,4 @@ var app = new Vue({
             console.log(datosDB);
             },
            
-    }
-    )
+    })
