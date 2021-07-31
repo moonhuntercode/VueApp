@@ -9,36 +9,49 @@
     <title>Vue1</title>
 </head>
 <body>
-    <div id="App0">
+    <div id="App0" class="container">
         <H1> {{titulo}} </H1>
 <p :class="[fondo]">
     aquí abajo tendremos la lista
+    que se almacena en localstorage
 </p>
-<input type="text"
-class="form-control my-3"
- v-model="nuevaTarea"
- v-on:keyup.enter="agregarTarea"
- />
-<button class="btn btn-primary"
-@click="agregarTarea">ADD</button>
-<ol>
-    <div  role="alert"
-    
-    :class="['alert',item.estado ? 'alert-success' : 'alert-danger']"
-     v-for="(item,index) of tareas">
-<div class="d-flex justify-content-between">
-<div>{{index}} - {{item.nombre}} - {{item.estado}}</div>
-<div>
-    <button class="btn btn-success bt-sm" 
-    @click="editarTarea(index)">ok</button>
-    <button class="btn btn-success bt-sm"
-    @click="estado= item.estado=false, eliminar(index)">
-        delete</button>
-</div>
-</div>
+<div class="zonadelista">
+    <input type="text"
+    class="form-control my-3"
+     v-model="nuevaTarea"
+     v-on:keyup.enter="agregarTarea"
+     />
+    <button class="btn btn-primary"
+    @click="agregarTarea">ADD</button>
+    <ol>
+        <div  role="alert"
+        
+        :class="['alert',item.estado ? 'alert-success' : 'alert-danger']"
+         v-for="(item,index) of tareas">
+    <div class="d-flex justify-content-between">
+    <div>{{index}} - {{item.nombre}} - {{item.estado}}</div>
+    <div>
+        <button class="btn btn-success bt-sm" 
+        @click="editarTarea(index)">ok</button>
+        <button class="btn btn-success bt-sm"
+        @click="estado= item.estado=false, eliminar(index)">
+            delete</button>
     </div>
+    </div>
+        </div>
+    
+    </ol>
 
-</ol>
+
+<p>
+    AQUÍ TEMINA LA APLICACION,
+    LISTA DE TAREAS QUE
+SE GUARDA EN LOCALSTORAGE
+</p>
+</div>
+<!-- AQUÍ TEMINA LA TODO APP,LISTA QUE
+SE GUARDA EN LOCALSTORAGE -->
+
   <hr>
   <br><br><br><br><br>  
 <input type="text" class="form control m-3" v-model="fondo">
