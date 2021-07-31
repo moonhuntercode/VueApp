@@ -1,8 +1,12 @@
 const App0={
     data(){
         return{
+            titulo:'TAREAS PENDIENTES',
             message:'Hello Vue World',
             message2:'putoskys',
+            fondo:'bg-warning',
+            tareas:[],
+            nuevaTarea:'',
             verduras:[
                 {nombre:'Manzana',cantidad:4},
                 {nombre:'Banana',cantidad:3},
@@ -17,6 +21,18 @@ const App0={
     
 },
 methods:{
+    agregarTarea:function(){
+this.tareas.push({
+    nombre:this.nuevaTarea,
+    estado:false,
+})
+console.log(this.tareas);
+this.nuevaTarea='';
+    },
+    editarTarea:function(index){
+// console.log("edits",index);
+this.tareas[index].estado=true;
+    },
     reverseMessage:function(){
         this.message2=this.message2.split('').reverse().join('')
 
