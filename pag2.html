@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="App2" class="container">
+        <br><br><br>
+      <a href="./index.html">atras</a>
+        <hr>
+        <h1>más prácticas</h1>
+        <input type="text" class="form control m-3" v-model="fondo">
+  
+        <h6>{{message}} </h6>
+        <ol>
+  
+        
+        <li v-for="verdura of verduras">
+            <input type="number" v-model.number="verdura.cantidad">
+             {{verdura}} 
+             <span v-if=" verdura.cantidad === 0" >- Sin Stock</span>
+             <button @click="verdura.cantidad++" >+</button>
+             <button @click="verdura.cantidad--">-</button>
+            </li>
+        </ol>
+        <h4>TOTAL: {{sumarVerduras}} </h4>
+        <hr>
+        
+        <h5>practica de title</h5>
+        <br>
+        <span v-if="seen">Now you see me.</span>
+        <span v-bind:title="message" >
+            Hover your mouse over me for <br>
+            a few seconds to see my dynamically
+            bound tittle!
+        </span>
+        <br><hr>
+        <h5>mensaje a poner en reversa:aquí abajo</h5>
+        <p> {{message2}} </p>
+        <button v-on:click="reverseMessage" >Reverse Message</button>
+        <br><br>
+        <input  v-model="nuevaFruta" >
+        <button @click='agregarVerdura'>enviar</button>
+        <p class="bg-danger p-3 text-white">
+            Lorem ipsum dolor, sit amet
+             consectetur adipisicing elit.
+              Beatae optio voluptatem
+               iure iusto quibusdam, 
+               quaerat mollitia! Dicta facere quas dolore.</p>
+            
+    </div>
+    
+    
+  
+  <script src="./2.js"></script>
+  <script src="./vue.js"></script>
+</body>
+</html>

@@ -3,7 +3,7 @@ var app = new Vue({
     data: {
       message: 'Hello Vue!',
       titulo:'TAREAS PENDIENTES',
-            message:'Hello Vue World',
+            
             message2:'putoskys',
             fondo:'bg-success',
             tareas:[],
