@@ -22,14 +22,17 @@ class="form-control my-3"
 <button class="btn btn-primary"
 @click="agregarTarea">ADD</button>
 <ol>
-    <div  class="alert alert-primary " :class="{'bg-secondary text-white': tare.estado}" v-for="(tare,index) of tareas">
+    <div  role="alert"
+    
+    :class="['alert',item.estado ? 'alert-success' : 'alert-danger']"
+     v-for="(item,index) of tareas">
 <div class="d-flex justify-content-between">
-<div>{{index}} - {{tare.nombre}} - {{tare.estado}}</div>
+<div>{{index}} - {{item.nombre}} - {{item.estado}}</div>
 <div>
     <button class="btn btn-success bt-sm" 
     @click="editarTarea(index)">ok</button>
     <button class="btn btn-success bt-sm"
-    @click="estado= tare.estado=false">
+    @click="estado= item.estado=false, eliminar(index)">
         delete</button>
 </div>
 </div>

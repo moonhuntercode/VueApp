@@ -28,10 +28,17 @@ this.tareas.push({
 })
 console.log(this.tareas);
 this.nuevaTarea='';
+localStorage.setItem('gymVue',JSON.stringify(this.tareas) )
     },
     editarTarea:function(index){
 // console.log("edits",index);
 this.tareas[index].estado=true;
+localStorage.setItem('gymVue',JSON.stringify(this.tareas) )
+    },
+    eliminar:function(index){
+        console.log('eliminar',index);
+        this.tareas.splice(index,1);
+        localStorage.setItem('gymVue',JSON.stringify(this.tareas) )
     },
     reverseMessage:function(){
         this.message2=this.message2.split('').reverse().join('')
@@ -43,6 +50,15 @@ this.tareas[index].estado=true;
         })
         this.nuevaFruta='';
     }
+},
+created:function(){
+let datosDB=JSON.parse(localStorage.getItem('gymVue'));
+if (datosDB===null) {
+    this.tareas=[];
+}else{
+    this.tareas=datosDB;
+}
+console.log(datosDB);
 },
 computed:{
     sumarVerduras(){
