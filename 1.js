@@ -4,19 +4,11 @@ var app = new Vue({
       message: 'Hello Vue!',
       titulo:'TAREAS PENDIENTES',
             
-            message2:'putoskys',
+            
             fondo:'bg-success',
             tareas:[],
             nuevaTarea:'',
-            verduras:[
-                {nombre:'Manzana',cantidad:4},
-                {nombre:'Banana',cantidad:3},
-                {nombre:'Zandia',cantidad:0},
-                {nombre:'repollo',cantidad:0},
-            ],
-            seen:true,
-            nuevaFruta:'',
-            total:0
+            
             },
             methods:{
                 agregarTarea:function(){
@@ -38,16 +30,8 @@ var app = new Vue({
                     this.tareas.splice(index,1);
                     localStorage.setItem('gymVue',JSON.stringify(this.tareas) )
                 },
-                reverseMessage:function(){
-                    this.message2=this.message2.split('').reverse().join('')
-            
-                },
-                agregarVerdura(){
-                    this.verduras.push({
-                        nombre:this.nuevaFruta,cantidad:3,
-                    })
-                    this.nuevaFruta='';
-                }
+                
+                
             },
             created:function(){
             let datosDB=JSON.parse(localStorage.getItem('gymVue'));
@@ -58,14 +42,6 @@ var app = new Vue({
             }
             console.log(datosDB);
             },
-            computed:{
-                sumarVerduras(){
-                    this.total=0;
-                    for(verdura of this.verduras){
-                        this.total=this.total+verdura.cantidad;
-                    }
-                    return this.total;
-                }
-            }
+           
     }
     )
