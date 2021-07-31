@@ -53,43 +53,49 @@ SE GUARDA EN LOCALSTORAGE
 SE GUARDA EN LOCALSTORAGE -->
 
   <hr>
-  <br><br><br><br><br>  
-<input type="text" class="form control m-3" v-model="fondo">
+  <br><br><br><br><br> 
+  <div class="container">
+      <h1>más prácticas</h1>
+      <input type="text" class="form control m-3" v-model="fondo">
 
-        <h1> message:{{message}} </h1>
-        <ol>
+      <h1> message:{{message}} </h1>
+      <ol>
 
-        
-        <li v-for="verdura of verduras">
-            <input type="number" v-model.number="verdura.cantidad">
-             {{verdura}} 
-             <span v-if=" verdura.cantidad === 0" >- Sin Stock</span>
-             <button @click="verdura.cantidad++" >+</button>
-             <button @click="verdura.cantidad--">-</button>
-            </li>
-        </ol>
-        <h4>TOTAL: {{sumarVerduras}} </h4>
-        <span v-if="seen">Now you see me.</span>
-        <span v-bind:title="message" >
-            Hover your mouse over me for <br>
-            a few seconds to see my dynamically
-            bound tittle!
-        </span>
-        <p> {{message2}} </p>
-        <button v-on:click="reverseMessage" >Reverse Message</button>
-        <br><br>
-        <input  v-model="nuevaFruta" >
-        <button @click='agregarVerdura'>enviar</button>
-        <p class="bg-danger p-3 text-white">
-            Lorem ipsum dolor, sit amet
-             consectetur adipisicing elit.
-              Beatae optio voluptatem
-               iure iusto quibusdam, 
-               quaerat mollitia! Dicta facere quas dolore.</p>
-            
-    </div>
-    
-    
+      
+      <li v-for="verdura of verduras">
+          <input type="number" v-model.number="verdura.cantidad">
+           {{verdura}} 
+           <span v-if=" verdura.cantidad === 0" >- Sin Stock</span>
+           <button @click="verdura.cantidad++" >+</button>
+           <button @click="verdura.cantidad--">-</button>
+          </li>
+      </ol>
+      <h4>TOTAL: {{sumarVerduras}} </h4>
+      <span v-if="seen">Now you see me.</span>
+      <span v-bind:title="message" >
+          Hover your mouse over me for <br>
+          a few seconds to see my dynamically
+          bound tittle!
+      </span>
+      <p> {{message2}} </p>
+      <button v-on:click="reverseMessage" >Reverse Message</button>
+      <br><br>
+      <input  v-model="nuevaFruta" >
+      <button @click='agregarVerdura'>enviar</button>
+      <p class="bg-danger p-3 text-white">
+          Lorem ipsum dolor, sit amet
+           consectetur adipisicing elit.
+            Beatae optio voluptatem
+             iure iusto quibusdam, 
+             quaerat mollitia! Dicta facere quas dolore.</p>
+          
+  </div>
+  
+  
+
+
+  </div>
+
     <script src="./vue.global.js"></script>
     <script src="./1.js"></script>
 </body>
