@@ -9,7 +9,7 @@
       content="Web site created using VUE 3.0X DEV: MOONHUNTER CODE alias de victor code"/>
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="./triangulo.css">
-    <title>Vue1</title>
+    <title>theme1</title>
 </head>
 <body>
     <div id="App0" class="container">
@@ -76,12 +76,18 @@ SE GUARDA EN LOCALSTORAGE -->
           </li>
       </ol>
       <h4>TOTAL: {{sumarVerduras}} </h4>
+      <hr>
+      
+      <h5>practica de title</h5>
+      <br>
       <span v-if="seen">Now you see me.</span>
       <span v-bind:title="message" >
           Hover your mouse over me for <br>
           a few seconds to see my dynamically
           bound tittle!
       </span>
+      <br><hr>
+      <h5>mensaje a poner en reversa:aquí abajo</h5>
       <p> {{message2}} </p>
       <button v-on:click="reverseMessage" >Reverse Message</button>
       <br><br>
@@ -101,7 +107,7 @@ SE GUARDA EN LOCALSTORAGE -->
 
   </div>
 
-    <script src="./vue.global.js"></script>
+    <script src="./vue.js"></script>
     <script src="./1.js"></script>
 </body>
 </html>
