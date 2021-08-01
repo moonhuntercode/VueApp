@@ -9,9 +9,14 @@
 </head>
 <body>
     <div id="App2" class="container">
+        
         <br><br><br>
       <a href="./index.html">ATRAS</a>
+    <br>
+      <a href="./pag3.html">siguiente página</a>   
         <hr>
+        <br><br>
+        
         <h1>más prácticas</h1>
         
   
@@ -28,6 +33,9 @@
             </li>
         </ol>
         <h4>TOTAL: {{sumarVerduras}} </h4>
+        <p>agrege nueva fruta</p>
+        <input  v-model="nuevaFruta" v-on:keyup.enter="agregarVerdura" >
+        <button @click='agregarVerdura'>enviar</button>
         <hr>
         
         <h5>practica de title</h5>
@@ -40,22 +48,34 @@
         </span>
         <br><hr>
         <h5>mensaje a poner en reversa:aquí abajo</h5>
+        <p>editalo</p>
+        <input type="text"
+        v-model="message2"
+        >
         <p> {{message2}} </p>
-        <button v-on:click="reverseMessage" >Reverse Message</button>
-        <br><br>
-        <input  v-model="nuevaFruta" >
-        <button @click='agregarVerdura'>enviar</button>
-        <p class="bg-danger p-3 text-white">
-            Lorem ipsum dolor, sit amet
-             consectetur adipisicing elit.
-              Beatae optio voluptatem
-               iure iusto quibusdam, 
-               quaerat mollitia! Dicta facere quas dolore.</p>
-            
+        <p>invertido: {{invertido}} </p>
+        <button v-on:click="reverseMessage" >revolver mensaje</button>
+        <hr>
+        <div class="progress">    
+            <div class="progress-bar bg-success"
+            :style=" {'width':contador+'%'} "
+            role="progressbar" style="width: 25%"
+             aria-valuenow="25" aria-valuemin="0"
+             aria-valuemax="100"
+             :class="color"
+             >
+                {{contador}}%
+            </div>
+          </div>
+          <button class="btn btn-danger" @click="contador++">+</button>
+            <button class="btn btn-primary" @click="contador--" >-</button>
+            <br>
+            {{contador}}
+            <br>
+           
     </div>
     
     
-  
     <script src="./vue.js"></script>
     <script src="./2.js"></script>
 </body>

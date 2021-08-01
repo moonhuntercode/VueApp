@@ -12,7 +12,8 @@ var app2=new Vue({
         ],
         seen:true,
         nuevaFruta:'',
-        total:0
+        total:0,
+        contador:0,
     },
     methods:{
         reverseMessage:function(){
@@ -33,8 +34,20 @@ var app2=new Vue({
                 this.total=this.total+verdura.cantidad;
             }
             return this.total;
+        },
+        invertido(){
+            return this.message2.split('').reverse().join('');
+        },
+        color(){
+            return {
+                'bg-success' : this.contador <=10,
+                'bg-danger':this.contador >10 && this.contador <20,
+                'bg-warning':this.contador >=20
+            }
+            
         }
-    }
+    },
+    
     
 
 
