@@ -21,7 +21,7 @@ Vue.component('titulo',{
 template: //html
 `
 <div>
-    <h1>numero</h1>
+    <h1>numero dinámico: {{$store.state.numero}} </h1>
     <hijo></hijo>
 </div>
 `,
@@ -30,7 +30,8 @@ Vue.component('hijo',{
     template: //html
     `
     <div>
-        <button>+</button>
+        <h1>numero: {{$store.state.numero}} </h1>
+        <button @click="$store.commit('aumentar')" >+</button>
         
     </div>
     `,
@@ -42,7 +43,7 @@ Vue.component('hijo',{
        },
        mutations:{
            aumentar(state){
-               state.numero++   
+               state.numero++
            }
        }
     });
