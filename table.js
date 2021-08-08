@@ -1,3 +1,4 @@
+
 Vue.component('padre',{
     template: //html
     `
@@ -15,14 +16,13 @@ Vue.component('padre',{
                         <tr>
                             <td>{{product.name}}</td>
                             
-                            <td >
-                            
-                            {{product.cantidad-$store.state.numero1}} 
-                            <span v-if="product.cantidad-$store.state.numero1===0">en el inventario</span>
+                            <td>
+                            {{product.cantidad-numero1}} 
+                            <span v-if="product.cantidad-numero1===0">en el inventario</span>
                             </td>
                             <td>
-                                {{$store.state.numero1}}  pedidos
-                            <span v-if="$store.state.numero1===3 ">sin stock</span
+                            {{numero1}} pedidos
+                            <span v-if="numero1===3 ">sin stock</span>
                             </td>
                         </tr>
                          
@@ -32,7 +32,7 @@ Vue.component('padre',{
             
         </table>
     <h4>total vendido:{{sumarPedidos}} </h4>
-        <h1>padre:numero1 dinámico: {{$store.state.numero1}} </h1>
+        <h1>padre:numero1 dinámico: {{numero1}} </h1>
         <hijo></hijo>
     </div>
     `,
@@ -53,6 +53,7 @@ Vue.component('padre',{
                 this.totalPedidos=this.totalPedidos+store.state.numero1;
             }
             return this.totalPedidos;
-        }
+        },
+        ...Vuex.mapState(['numero1'])
     }
     });
