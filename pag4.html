@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./styles/main.css">
     <script src="./vue.js"></script>
     <script src="./vuex.js"></script>
+    <script src="./table.js"></script>
     <title>vuex</title>
 </head>
 <body>
@@ -15,66 +16,13 @@
 <padre></padre>
     </div>
     <script>
-Vue.component('padre',{
-template: //html
-`
-<div class="container">
-    <table style="width:40%">
-        
-            <ol >
-                
-                <li v-for="product of products" >
-                    <tr>
-                        <th>PRODUCTO</th>
-            <th>CANTIDAD</th>
-            <th>PEDIDOS</th>
-                    </tr>
-                    <tr>
-                        <td>{{product.name}}</td>
-                        <td > {{product.cantidad}} </td>
 
-                        <td>
-                            {{$store.state.numero}}  pedidos
-                        <span v-if="$store.state.numero===3 ">sin stock</span
-                    </td>
-                    </tr>
-                     
-                </li>
-            </ol>
-       
-        
-    </table>
-<h4>total vendido:{{sumarPedidos}} </h4>
-    <h1>padre:numero dinámico: {{$store.state.numero}} </h1>
-    <hijo></hijo>
-</div>
-`,
-data(){
-    return {
-        totalPedidos:0,
-        products:[
-        {name:"CHURRASCO",cantidad:3},
-        {name:"YUCA FRITA",cantidad:3},
-        {name:"MAJADITO",cantidad:2}
-        ]
-    }
-},
-computed:{
-    sumarPedidos(){
-        this.totalPedidos=0;
-        for(product of this.products){
-            this.totalPedidos=this.totalPedidos+store.state.numero;
-        }
-        return this.totalPedidos;
-    }
-}
-});
 Vue.component('hijo',{
     template: //html
     `
     <div>
         hijo
-        <h1>pedidos:numero: {{$store.state.numero}} </h1>
+        <h1>pedidos:numero1: {{$store.state.numero1}} </h1>
         <button @click="$store.commit('aumentar')" >+</button>
         <button @click="$store.commit('disminuir')"> - </button>
     </div>
@@ -83,14 +31,14 @@ Vue.component('hijo',{
 
     const store=new Vuex.Store({
        state:{
-           numero:10
+           numero1:9
        },
        mutations:{
            aumentar(state){
-               state.numero++
+               state.numero1++
            },
            disminuir(state){
-               state.numero--
+               state.numero1--
        },
     }
     });
