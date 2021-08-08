@@ -88,7 +88,6 @@ template://html
     methods:{
         reverseMessage:function(){
             this.message2=this.message2.split('').reverse().join('')
-    
         },
         agregarVerdura(){
             this.verduras.push({
